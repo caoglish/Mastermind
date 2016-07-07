@@ -1,27 +1,31 @@
-const $=require('jquery');
-const _=require('lodash');
-
-class UiMaker {
-
-  constructor() {
-    
-  }
-
-  abc(){
-  	return "es6";
-  }
+const $ = require('jquery');
+var UiMaker=require('./UiMaker');
+var GameEngine=require('./GameEngine');
 
 
-};
+$(() => {
+	$('body').append(`jquery: ${$().jquery}`);
+	let uim = new UiMaker();
+	let ge = new GameEngine();
+	console.log(uim.test());
+	ge.test();
 
+	uim.resetDeck()
+	uim.makeDropRow();
+	for(var i=0;i<10;i++) 
+			{
+				uim.makeDropRow();
+			}
 
+    $('body').dblclick(function(){
+    	uim.resetDeck()
+    });
 
+		
+	
 
-
-
-$(()=>{
-	$('body').append("hello,world");
-	let uim=new UiMaker();
-	console.log(uim.abc());
-
+	
+	
+	//$playground=
+	let $codeItem = $('.code-item').draggable();
 })();

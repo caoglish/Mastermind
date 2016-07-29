@@ -4,8 +4,8 @@ require('jquery-ui');
 
 class UiMaker {
 	constructor() {
-		this.$itemDeck=$('.code-preparing-table');
 		this.$game = $(".game");
+		this.$itemDeck=this.$game.find('.code-preparing-table');
 		this.$playground=this.$game.find(".playground");
 	}	
 
@@ -30,6 +30,7 @@ class UiMaker {
 
 	
 	makeDropRow(){
+		console.log($("template#guess-row").html());
 		let $divDropRow = $($("template#guess-row").html().trim());//get template.
 		let guessArea=$divDropRow.find('.guess-area');
 	//	console.log($divDropRow);
@@ -47,6 +48,8 @@ class UiMaker {
 					.attr('data-val',num)
 					.droppable()	;
 	}
+
+
 
 	test() {
 		return "es61";

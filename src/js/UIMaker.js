@@ -30,7 +30,7 @@ class UiMaker {
 
 	
 	makeDropRow(){
-		console.log($("template#guess-row").html());
+		//console.log($("template#guess-row").html());
 		let $divDropRow = $($("template#guess-row").html().trim());//get template.
 		let guessArea=$divDropRow.find('.guess-area');
 	//	console.log($divDropRow);

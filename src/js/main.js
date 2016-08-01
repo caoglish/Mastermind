@@ -11,7 +11,8 @@ $(() => {
 	let ge = new GameEngine();
 	let gui= new GameUserInterface();
 	//console.log(uim.test());
-	ge.test();
+	ge.init();
+	ge.activeDropCell();
 
 	//uim.resetDeck();
 	//gui.init();
@@ -21,9 +22,11 @@ $(() => {
 	// 			uim.makeDropRow();
 	// 		}
 
-    $('body').dblclick(function(){
-//    	uim.resetDeck()
-    });
+
+
+//     $('body').dblclick(function(){
+// //    	uim.resetDeck()
+//     });
 
 	let $codeItem = $('.code-item').draggable();
 });

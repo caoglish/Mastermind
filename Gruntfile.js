@@ -1,6 +1,5 @@
 var config = {
     src: "./src/"
-
 };
 
 module.exports = function(grunt) {
@@ -9,8 +8,12 @@ module.exports = function(grunt) {
         browserify: {
             app: {
                 options: {
-                      transform: [ ["babelify", { "presets": ["es2015"] }] ]
-                   // transform: ["babelify"]
+                    transform: [
+                            ["babelify", {
+                                "presets": ["es2015"]
+                            }]
+                        ]
+                        // transform: ["babelify"]
                 },
                 files: {
                     'dist/app.js': [config.src + "js/main.js"]
@@ -23,7 +26,7 @@ module.exports = function(grunt) {
                     compress: false,
                     yuicompress: true,
                     optimization: 2,
-                    path:['./src/less','./node_modules/bootstrap/dist/less']
+                    path: ['./src/less', './node_modules/bootstrap/dist/less']
                 },
                 files: {
                     "dist/style.css": config.src + "less/main.less"
@@ -46,6 +49,16 @@ module.exports = function(grunt) {
                     hostname: '127.0.0.1',
                     open: true,
                     base: './'
+                }
+            }
+        },
+        uglify: {
+            options: {
+                mangle: true
+            },
+            my_target: {
+                files: {
+                    'dist/app.js': ['dist/app.js']
                 }
             }
         },
@@ -75,8 +88,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
 
     grunt.registerTask('dev', ["connect", "watch"]);
-    grunt.registerTask('default', ['browserify', 'less', 'copy:html']);
+    grunt.registerTask('default', ['browserify', 'less', 'copy:html', 'uglify']);
 };

@@ -1,6 +1,7 @@
 //jshint esversion: 6
 const $ = require('jquery');
-require('jquery-ui');
+require('jquery-ui/draggable');
+require('jquery-ui/droppable');
 
 
 class UiMaker {
@@ -25,7 +26,7 @@ class UiMaker {
 			.attr('data-val', text)
 			.draggable({
 				revert: "invalid"
-			})
+			});
 	}
 
 
@@ -55,6 +56,6 @@ class UiMaker {
 	test() {
 		return "es61";
 	}
-};
+}
 
 module.exports = UiMaker;

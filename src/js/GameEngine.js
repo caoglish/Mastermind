@@ -1,6 +1,7 @@
 //jshint esversion: 6
 const $ = require('jquery');
-require('jquery-ui');
+require('jquery-ui/draggable');
+require('jquery-ui/droppable');
 const NumberGenerator = require('./NumberGenerator');
 const GameUserInterface = require('./GameUserInterface');
 
@@ -8,6 +9,11 @@ class GameEngine {
 	constructor() {
 		this.gui = new GameUserInterface();
 		this.answer = [];
+	}
+
+	start(){
+		this.init();
+		this.activeDropCell();
 	}
 
 	init() {

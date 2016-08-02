@@ -1,7 +1,8 @@
 //jshint esversion: 6
 var UiMaker=require('./UiMaker');
 const $ = require('jquery');
-require('jquery-ui');
+require('jquery-ui/draggable');
+require('jquery-ui/droppable');
 
 class GameUserInterface{
 	constructor() {

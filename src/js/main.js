@@ -1,3 +1,4 @@
+//jshint esversion: 6
 const $ = require('jquery');
 //var UiMaker=require('./UiMaker');
 var GameUserInterface=require('./GameUserInterface');

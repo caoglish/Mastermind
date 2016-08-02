@@ -38,6 +38,11 @@ class GameUserInterface{
 	{
 		this.$allDropCell.on("dropItem",func);
 	}
+
+	resetDeck()
+	{
+		this.uim.resetDeck();
+	}
 }
 
 

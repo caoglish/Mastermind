@@ -1,3 +1,4 @@
+//jshint esversion: 6
 const $ = require('jquery');
 require('jquery-ui');
 
@@ -5,14 +6,13 @@ require('jquery-ui');
 class UiMaker {
 	constructor() {
 		this.$game = $(".game");
-		this.$itemDeck=this.$game.find('.code-preparing-table');
-		this.$playground=this.$game.find(".playground");
-	}	
+		this.$itemDeck = this.$game.find('.code-preparing-table');
+		this.$playground = this.$game.find(".playground");
+	}
 
-	resetDeck(){
+	resetDeck() {
 		this.$itemDeck.html('');
-		for(var i=0;i<10;i++)
-		{
+		for (var i = 0; i < 10; i++) {
 			this.$itemDeck.append(this.makeCodeItem(i));
 		}
 	}
@@ -28,25 +28,26 @@ class UiMaker {
 			})
 	}
 
-	
-	makeDropRow(){
+
+	makeDropRow() {
 		//console.log($("template#guess-row").html());
-		let $divDropRow = $($("template#guess-row").html().trim());//get template.
-		let guessArea=$divDropRow.find('.guess-area');
-	//	console.log($divDropRow);
-		for(var i=0; i<4; i++)
-		{
+		let $divDropRow = $($("template#guess-row").html().trim()); //get template.
+		let guessArea = $divDropRow.find('.guess-area');
+		//	console.log($divDropRow);
+		for (var i = 0; i < 4; i++) {
 			$divDropRow.find('.guess-area').append(this.makeDropCell(''));
 		}
 		this.$playground.append($divDropRow);
 	}
 
 	//make a drop cell
-	makeDropCell(num){
-		return $('<div/>',{class:"guess-cell"})
-					.text(num)
-					.attr('data-val',num)
-					.droppable()	;
+	makeDropCell(num) {
+		return $('<div/>', {
+				class: "guess-cell"
+			})
+			.text(num)
+			.attr('data-val', num)
+			.droppable();
 	}
 
 
@@ -56,4 +57,4 @@ class UiMaker {
 	}
 };
 
-module.exports=UiMaker;
+module.exports = UiMaker;

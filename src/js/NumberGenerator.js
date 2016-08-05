@@ -45,7 +45,6 @@ class NumberGenerator {
 	generateFourNumbers() {
 		var	randnum;
 		for (let i = 0; i < 4; i++) {
-			
 			do {
 			 	randnum = parseInt(this.getRandomNumber() * 10 % 10);
 			} while (this.numbers.indexOf(randnum) > -1);

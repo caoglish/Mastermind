@@ -29,7 +29,6 @@ class UiMaker {
 			});
 	}
 
-
 	makeDropRow() {
 		//console.log($("template#guess-row").html());
 		let $divDropRow = $($("template#guess-row").html().trim()); //get template.
@@ -49,12 +48,6 @@ class UiMaker {
 			.text(num)
 			.attr('data-val', num)
 			.droppable();
-	}
-
-
-
-	test() {
-		return "es61";
 	}
 }
 

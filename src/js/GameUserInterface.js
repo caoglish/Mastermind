@@ -23,7 +23,7 @@ class GameUserInterface{
 
 		this.$allDropCell=this.$playground.find(".guess-cell.ui-droppable");
 		this.$allDropCell.droppable({
-			drop : function(dropEvent,ui){
+			drop : function (dropEvent,ui) {
 				$(this).trigger("dropItem",[dropEvent,ui]);
 			}
 		});

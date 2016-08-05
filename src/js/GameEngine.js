@@ -36,7 +36,7 @@ class GameEngine {
 
 		let selectVal = $dragItem.data('val');
 		var $currentRow = $dropCell.parents(".guess-row");
-		console.log($currentRow);
+		
 
 		//drop cell gui processing
 		$dragItem.hide();
@@ -52,28 +52,21 @@ class GameEngine {
 		var NumOfDropCell = $currentRow.find(".guess-cell").filter(function(index) {
 			return $(this).droppable('option', 'disabled') === false;
 		}).length;
-		console.log(NumOfDropCell);
+		
 
 		if (NumOfDropCell === 0) {
 			this.completeRow($currentRow, $dragItem, $dropCell);
 		}
-
-
-
 	}
 
 	completeRow($currentRow, $dragItem, $dropCell) {
-		console.log($currentRow);
-		console.log($dropCell);
-		console.log($dropCell);
-
+		
 		//get 4 numbers from current row
 		var rowNumbers = $currentRow.find(".guess-cell").map(function(index) {
 			return $(this).data('val');
 		}).get();
 
 		let hint = this.makeHint(this.answer, rowNumbers);
-		console.log(hint);
 		$currentRow.find(".right-item").text(hint);
 
 		if (hint === 'A4B0') {
@@ -87,7 +80,7 @@ class GameEngine {
 		} else {
 			//procssing if guess is not right
 			let $nextRow = $currentRow.next(".guess-row"); //next Row
-			console.log($nextRow );
+			
 			if ($nextRow.find(".guess-cell" ).length !== 0) {
 				//enable the next row.
 				$nextRow.find(".guess-cell" ).droppable('enable');
@@ -102,17 +95,9 @@ class GameEngine {
 			}
 		}
 		this.gui.resetDeck();
-
-	
-
-
 	}
-
-
 	makeHint(gmAns, usrAns) {
-		console.log(gmAns);
-		console.log(usrAns);
-
+		
 		let a = 0;
 		let b = 0;
 		let num;

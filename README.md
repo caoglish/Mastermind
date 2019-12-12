@@ -3,7 +3,7 @@
 
 Demo: https://caoglish.github.io/Mastermind/
 
-# purpose
+# Purpose
 - Implements the algorithm of Mastermind for game rule and interface
 - Practise the ES6 version JavaScript syntax
 - Practise the popular JavaScript module like jQuery, jQuery-ui,Lodash and Bootstrap

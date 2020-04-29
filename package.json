@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "jquery": "^2.2.4",
+    "jquery": "^3.5.0",
     "jquery-ui": "^1.10.5",
     "lodash": "^4.13.1"
   },
